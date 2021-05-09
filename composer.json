@@ -1,0 +1,6 @@
+{
+    "require": {
+        "components/font-awesome": "^5.15",
+        "fortawesome/font-awesome": "^5.15"
+    }
+}
