@@ -34,5 +34,5 @@
     position: relative;
   }
 
-  @import "./scss/nav";
+  @import "./my-scss/nav";
 </style>

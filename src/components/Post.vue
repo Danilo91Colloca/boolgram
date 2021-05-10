@@ -3,8 +3,7 @@
       <div class="post-author-box">
         <div class="post-userData">
           <div class="post-userImage">
-            <!-- <img src="" alt=""> -->
-
+            <img :src="postImg" alt="">
           </div>
           <h5>NAME AUTHOR</h5>
         </div>
@@ -13,22 +12,40 @@
         </div>
       </div>
       <div class="post-img-box">
-        <img src="" alt="">
-        POST IMAGE
+        <img :src="postImg" alt="">
       </div>
+      <!-- like and msg -->
       <div class="like-message-box">
         <div class="icon-like-msg">
           <i class="far fa-heart"></i>
           <i class="far fa-comment"></i>
         </div>
         <div class="like-users">
-          <div class="img-first-user">
-            <img src="" alt="">
+          <div class="img-user-like">
+            <img :src="userLikeImg" alt="">
           </div>
-          <h5>user name</h5>
+          <div class="all-likes">
+            Piace a 
+            <strong>User_Name</strong>
+            e 
+            <a href="#">
+              <strong>n altri</strong>
+            </a>
+          </div>
         </div>
       </div>
-
+      <!-- comments -->
+      <div class="comments-box">
+          <div class="last-comment">
+            <p>
+              <strong>heaters_5483 </strong>
+              this is an heaters comment
+            </p>
+          </div>
+          <a class="all-comments" href="#" >
+            Visualizza tutti e n commenti
+          </a>
+      </div>
   </div>
 </template>
 
@@ -36,11 +53,14 @@
 export default {
   name: "Post",
   props: {
-  },
+    // userImg: String,
+    postImg: String,
+    userLikeImg: String
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  @import "../scss/_post";
+  @import "../my-scss/_post";
 </style>

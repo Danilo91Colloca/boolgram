@@ -57,7 +57,10 @@
 
         <!-- posts box -->
         <div class="posts-box">
-          <Post />
+          <Post 
+            :postImg="require('@/assets/landscape.png')" 
+            :userLikeImg="require('@/assets/landscape.png')"
+          />
         </div>
       </div>
 
@@ -83,5 +86,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import "../scss/main";
+    @import "../my-scss/main";
 </style>

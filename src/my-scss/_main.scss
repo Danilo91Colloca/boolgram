@@ -42,6 +42,9 @@
               width: 100%;
               border-radius: 50%;
             }
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
         
@@ -49,7 +52,6 @@
       } //end stories-box
       .posts-box {
         height: 100%;
-        border: 2px solid lightgray;
         width: 100%;
       }
     }
