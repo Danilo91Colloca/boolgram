@@ -18,12 +18,15 @@
         </div>
       </div>
     </div>
-
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
+@import "./my-scss/color-palette";
+  body {
+     background-color: $mainBgColor;
+  }
   * {
     margin: 0;
     padding: 0;

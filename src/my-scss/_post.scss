@@ -1,6 +1,8 @@
+@import "_color-palette";
 .post {
   height: 800px;
-  border: 1px solid lightgray;
+  border: 1px solid $borderBoxColor;
+  background-color: #fff;
   .post-author-box {
     display: flex;
     justify-content: space-between;
@@ -12,10 +14,10 @@
       align-items: center;
       .post-userImage {
         width: 50px;
-        border-top: 2px solid rgb(214,11,120);
-        border-right: 2px solid rgb(214,11,120);
-        border-left:  2px solid gold;
-        border-bottom:  2px solid gold;
+        border-top: 2px solid $bordColorOne;
+        border-right: 2px solid $bordColorOne;
+        border-left:  2px solid $bordColorTwo;
+        border-bottom:  2px solid $bordColorTwo;
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -53,10 +55,10 @@
       align-items: center;
       .img-user-like {
         width: 50px;
-        border-top: 2px solid rgb(214,11,120);
-        border-right: 2px solid rgb(214,11,120);
-        border-left:  2px solid gold;
-        border-bottom:  2px solid gold;
+        border-top: 2px solid $bordColorOne;
+        border-right: 2px solid $bordColorOne;
+        border-left:  2px solid $bordColorTwo;
+        border-bottom:  2px solid $bordColorTwo;
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -75,15 +77,44 @@
         }
       }
     }
-  }
+  } //like-message-box
   .comments-box {
     padding: 15px;
+    margin-bottom: 10px;
     .last-comment {
       margin-bottom: 15px; 
     }
     a.all-comments {
       color: gray;
       text-decoration: none;
+    }
+  } //comments-box
+  .write-comment-box {
+    display: flex;
+    bottom: 0;
+    padding-right: 15px;
+    textarea {
+      width: 90%;
+      height: 30px;
+      font-size: 14px;
+      border: none;
+      padding: 0 15px;
+      outline: none;
+      resize: none;
+    }
+    button {
+      width: 10%;
+      background-color: transparent;
+      border: none;
+      color: $postFollowSwitchColor;
+      font-weight: 800;
+      &:hover {
+        cursor: pointer;
+      }
+      &:disabled {
+        color: $disabledButton;
+        cursor: default;
+      }
     }
   }
 }

@@ -14,7 +14,7 @@
       <div class="post-img-box">
         <img :src="postImg" alt="">
       </div>
-      <!-- like and msg -->
+      <!-- like and msg box-->
       <div class="like-message-box">
         <div class="icon-like-msg">
           <i class="far fa-heart"></i>
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <!-- comments -->
+      <!-- read comments box-->
       <div class="comments-box">
           <div class="last-comment">
             <p>
@@ -45,6 +45,12 @@
           <a class="all-comments" href="#" >
             Visualizza tutti e n commenti
           </a>
+      </div>
+      <!-- write a comment box-->
+      <div class="write-comment-box">
+        <textarea type="text" placeholder="Aggiungi un commento">
+        </textarea>  
+        <button type="submit" disabled> Pubblica</button>
       </div>
   </div>
 </template>
