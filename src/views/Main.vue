@@ -5,49 +5,17 @@
       <div class="main-left">
         <div class="stories-box">
           <!-- stories box -->
-          <div class="story-container">
+          <div class="story-container"  v-for="userStory in usersArr" v-bind:key="userStory.id">
             <div class="container-imgUser-story">
-              <img src="../assets/profile.jpg" alt="">
+              <img :src="userStory.profile_picture" alt="">
             </div>
-            <h5 class="user-name-story">ciccio_pippo91</h5>
+            <h5 class="user-name-story">{{userStory.profile_name}}</h5>
           </div>
-          <!-- TEMP -->
-          <div class="story-container">
-            <div class="container-imgUser-story">
-              <img src="../assets/profile.jpg" alt="">
-            </div>
-            <h5 class="user-name-story">ciccio_pippo91</h5>
-          </div>
-          <!-- TEMP --> 
-          <div class="story-container">
-            <div class="container-imgUser-story">
-              <img src="../assets/profile.jpg" alt="">
-            </div>
-            <h5 class="user-name-story">ciccio_pippo91</h5>
-          </div>
-          <!-- TEMP -->
-          <div class="story-container">
-            <div class="container-imgUser-story">
-              <img src="../assets/profile.jpg" alt="">
-            </div>
-            <h5 class="user-name-story">ciccio_pippo91</h5>
-          </div>
-            <!-- TEMP -->
-          <div class="story-container">
-            <div class="container-imgUser-story">
-              <img src="../assets/profile.jpg" alt="">
-            </div>
-            <h5 class="user-name-story">ciccio_pippo91</h5>
-          </div>
-           
         </div>
 
         <!-- posts box -->
         <div class="posts-box">
-          <Post 
-            :postImg="require('@/assets/landscape.png')" 
-            :userLikeImg="require('@/assets/landscape.png')"
-          />
+          <Post/>
         </div>
       </div>
 
@@ -68,42 +36,12 @@
           <!-- suggestions box-->
           <div class="suggestions-box">
              <ul class="list-users-suggested">
-               <li class="user-suggested-li">
+               <li class="user-suggested-li" v-for="user in usersArr" v-bind:key="user.id">
                   <div class="suggested-user">
                     <div class="container-imgUser-story">
-                      <img src="../assets/profile.jpg" alt="">
+                      <img :src="user.profile_picture" alt="">
                     </div>
-                    <h5 class="user-name-story">ciccio_pippo91</h5>
-                    <a href="#" class="change-account">Segui</a> 
-                  </div>
-               </li>
-               <!-- TEMP-->
-               <li class="user-suggested-li">
-                  <div class="suggested-user">
-                    <div class="container-imgUser-story">
-                      <img src="../assets/profile.jpg" alt="">
-                    </div>
-                    <h5 class="user-name-story">ciccio_pippo91</h5>
-                    <a href="#" class="change-account">Segui</a> 
-                  </div>
-               </li>
-               <!-- TEMP-->
-               <li class="user-suggested-li">
-                  <div class="suggested-user">
-                    <div class="container-imgUser-story">
-                      <img src="../assets/profile.jpg" alt="">
-                    </div>
-                    <h5 class="user-name-story">ciccio_pippo91</h5>
-                    <a href="#" class="change-account">Segui</a> 
-                  </div>
-               </li>
-               <!-- TEMP-->
-               <li class="user-suggested-li">
-                  <div class="suggested-user">
-                    <div class="container-imgUser-story">
-                      <img src="../assets/profile.jpg" alt="">
-                    </div>
-                    <h5 class="user-name-story">ciccio_pippo91</h5>
+                    <h5 class="user-name-story">{{user.profile_name}}</h5>
                     <a href="#" class="change-account">Segui</a> 
                   </div>
                </li>
@@ -129,11 +67,19 @@
 <script>
 // @ is an alias to /src
 import Post from "@/components/Post.vue";
+import { mapState } from 'vuex';
 export default {
   name: "App",
   components: {
     Post,
   },
+  mounted () {
+        this.$store.dispatch('getUsers')
+    },
+  computed: 
+    mapState([
+      'usersArr'
+  ]),
 };
 </script>
 

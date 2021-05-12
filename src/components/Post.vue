@@ -1,18 +1,22 @@
 <template>
   <div class="post">
+    <div class="post-collection-comntainer" v-for="post in postsArr" :key="post.id">
       <div class="post-author-box">
         <div class="post-userData">
           <div class="post-userImage">
-            <img :src="postImg" alt="">
+            <img :src="post.profile_picture" alt="">
           </div>
-          <h5>NAME AUTHOR</h5>
+          <div>
+            <h5>{{post.profile_name}}</h5>
+            <span>{{post.profile_fullname}}</span>
+          </div>
         </div>
         <div class="menu-post">
           <i class="fas fa-ellipsis-h"></i>
         </div>
       </div>
       <div class="post-img-box">
-        <img :src="postImg" alt="">
+        <img :src="post.post_image" alt="">
       </div>
       <!-- like and msg box-->
       <div class="like-message-box">
@@ -22,7 +26,7 @@
         </div>
         <div class="like-users">
           <div class="img-user-like">
-            <img :src="userLikeImg" alt="">
+            <img src="" alt="">
           </div>
           <div class="all-likes">
             Piace a 
@@ -52,17 +56,29 @@
         </textarea>  
         <button type="submit" disabled> Pubblica</button>
       </div>
+      <!-- <div v-for="user in usersArr" v-bind:key="user.id">
+        <img :src="user.profile_picture" alt="">
+        {{user.profile_name}}
+      </div> -->
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: "Post",
   props: {
-    // userImg: String,
-    postImg: String,
-    userLikeImg: String
-  }
+  },
+  mounted () {
+        this.$store.dispatch('getUsers');
+        this.$store.dispatch('getPosts')
+    },
+  computed: 
+    mapState([
+      'usersArr',
+      'postsArr'
+  ]),
 };
 </script>
 
