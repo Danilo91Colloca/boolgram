@@ -3,16 +3,7 @@
     <main class="wrapper-center">
       <!-- LEFT SECTION -->
       <div class="main-left">
-        <div class="stories-box">
-          <!-- stories box -->
-          <div class="story-container"  v-for="userStory in usersArr" v-bind:key="userStory.id">
-            <div class="container-imgUser-story">
-              <img :src="userStory.profile_picture" alt="">
-            </div>
-            <h5 class="user-name-story">{{userStory.profile_name}}</h5>
-          </div>
-        </div>
-
+        <Slides/>
         <!-- posts box -->
         <div class="posts-box">
           <Post/>
@@ -23,29 +14,33 @@
       <div class="main-right">
         <div class="main-r-wrapper">
           <!-- user section on right -->
-          <div class="profile-info-userLogged">
-            <div class="img-profile-userLogged">
-               <img src="../assets/profile.jpg" alt="">
+          <div class="user-r-section">
+            <div class="profile-info-userLogged">
+              <div class="img-profile-userLogged">
+                <img src="../assets/profile.jpg" alt="">
+              </div>
+              <div class="user-name-box">
+              <p class="user-name">piu_94</p>
+              <p class="real-name">Paperion Pippo</p> 
+              </div> 
+              <a href="#" class="change-account">Passa a</a>  
             </div>
-            <div class="user-name-box">
-             <p class="user-name">piu_94</p>
-             <p class="real-name">Paperion Pippo</p> 
-            </div> 
-            <a href="#" class="change-account">Passa a</a>  
-          </div>
-          <!-- suggestions box-->
-          <div class="suggestions-box">
-             <ul class="list-users-suggested">
-               <li class="user-suggested-li" v-for="user in usersArr" v-bind:key="user.id">
-                  <div class="suggested-user">
-                    <div class="container-imgUser-story">
-                      <img :src="user.profile_picture" alt="">
+            <!-- suggestions box-->
+            <div class="suggestions-box">
+              <ul class="list-users-suggested">
+                <li class="user-suggested-li" v-for="user in usersArr" v-bind:key="user.id">
+                    <div class="suggested-user">
+                      <div class="container-imgUser-story">
+                        <img :src="user.profile_picture" alt="">
+                      </div>
+                      <div class="userName-burtton-r-contianer">
+                        <h5 class="user-name-story">{{user.profile_name}}</h5>
+                        <a href="#" class="change-account">Segui</a> 
+                      </div>
                     </div>
-                    <h5 class="user-name-story">{{user.profile_name}}</h5>
-                    <a href="#" class="change-account">Segui</a> 
-                  </div>
-               </li>
-             </ul>
+                </li>
+              </ul>
+            </div>
           </div>
           <!-- FOOTER -->
           <footer>
@@ -67,11 +62,13 @@
 <script>
 // @ is an alias to /src
 import Post from "@/components/Post.vue";
+import Slides from "@/components/Slides.vue";
 import { mapState } from 'vuex';
 export default {
   name: "App",
   components: {
     Post,
+    Slides
   },
   mounted () {
         this.$store.dispatch('getUsers')

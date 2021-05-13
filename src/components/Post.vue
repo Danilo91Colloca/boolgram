@@ -56,10 +56,6 @@
         </textarea>  
         <button type="submit" disabled> Pubblica</button>
       </div>
-      <!-- <div v-for="user in usersArr" v-bind:key="user.id">
-        <img :src="user.profile_picture" alt="">
-        {{user.profile_name}}
-      </div> -->
     </div>
   </div>
 </template>

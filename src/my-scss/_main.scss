@@ -15,43 +15,7 @@
       width: 65%;
       height: 100%;
       padding: 5px;
-      .stories-box {
-        width: 100%;
-        height: 180px;
-        background: #fff; 
-        display: flex;
-        border: 1px solid lightgray;
-        margin: 15px 0px;
-        overflow-x: auto;
-        .story-container {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          margin: 0px 10px;
-            .container-imgUser-story {
-            width: 50px;
-            border-top: 2px solid $bordColorOne;
-            border-right: 2px solid $bordColorOne;
-            border-left:  2px solid $bordColorTwo;
-            border-bottom:  2px solid $bordColorTwo;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            padding: 2px;  
-            margin-bottom: 5px;        
-            img {
-              width: 100%;
-              border-radius: 50%;
-            }
-            &:hover {
-              cursor: pointer;
-            }
-          }
-        } //end story container
-        
-
-      } //end stories-box
+      
       .posts-box {
         height: 100%;
         width: 100%;
@@ -69,81 +33,96 @@
         padding: 5px;
         border: 1px solid $borderBoxColor;
         position: relative;
-        .profile-info-userLogged {
-          position:relative;
-          display: flex;
-          align-items: center;
-          margin-bottom: 50px;
-          .img-profile-userLogged {
-            margin-right: 20px;
-            width: 40px;
-            overflow: hidden;
-            border-radius: 50%;
-            img {
-              width: 100%;
+        .user-r-section {
+          height: calc(100% - 80px);
+          width: 100%;
+          overflow: hidden;
+          .profile-info-userLogged {
+            position:relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            .img-profile-userLogged {
+              margin-right: 20px;
+              width: 40px;
+              height: 40px;
+              overflow: hidden;
               border-radius: 50%;
-              border: 2px solid lightgray;
+              img {
+                width: 100%;
+                border-radius: 50%;
+                border: 2px solid lightgray;
+              }
+              &:hover {
+                cursor: pointer;
+              }
+            
             }
-            &:hover {
-              cursor: pointer;
-            }
-          
-          }
-          .user-name-box {
-            .user-name {
-              font-weight: bolder;
-            }
-          }
-          a.change-account {
-            position: absolute;
-            right: 5px;
-            text-decoration: none;
-            color: $postFollowSwitchColor;
-            font-weight: bold;
-          }
-        } //end profile-info-userLogged
-        .suggestions-box {
-          .list-users-suggested {
-            list-style: none;
-            .user-suggested-li {
-              margin-bottom: 15px;
-              .suggested-user {
-                display: flex;
-                align-items: center;
-                .container-imgUser-story {
-                  width: 40px;
-                  border-top: 2px solid $bordColorOne;
-                  border-right: 2px solid $bordColorOne;
-                  border-left:  2px solid $bordColorTwo;
-                  border-bottom:  2px solid $bordColorTwo;
-                  border-radius: 50%;
-                  display: flex;
-                  justify-content: center;
-                  padding: 2px;  
-                  margin-right: 10px;        
-                  img {
-                    width: 100%;
-                    border-radius: 50%;
-                  }
-                  &:hover {
-                    cursor: pointer;
-                  }
-                }
-                a {
-                  position: absolute;
-                  right: 10px;
-                  text-decoration: none;
-                  color: $postFollowSwitchColor;
-                  font-weight: bold;
-                }
+            .user-name-box {
+              .user-name {
+                font-weight: bolder;
               }
             }
-          } //end list-user-suggested 
-        } //end suggestions-box
+            a.change-account {
+              position: absolute;
+              right: 5px;
+              text-decoration: none;
+              color: $postFollowSwitchColor;
+              font-weight: bold;
+            }
+          } //end profile-info-userLogged
+          .suggestions-box {
+            .list-users-suggested {
+              list-style: none;
+              .user-suggested-li {
+                margin-bottom: 15px;
+                .suggested-user {
+                  display: flex;
+                  align-items: center;
+                  .container-imgUser-story {
+                    width: 40px;
+                    height: 40px;
+                    border-top: 2px solid $bordColorOne;
+                    border-right: 2px solid $bordColorOne;
+                    border-left:  2px solid $bordColorTwo;
+                    border-bottom:  2px solid $bordColorTwo;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    padding: 2px;  
+                    margin-right: 10px;        
+                    img {
+                      width: 100%;
+                      border-radius: 50%;
+                    }
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+                  .userName-burtton-r-contianer {
+                    width: 100%;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    a {
+                      position: absolute;
+                      right: 10px;
+                      text-decoration: none;
+                      color: $postFollowSwitchColor;
+                      font-weight: bold;
+                    }
+                  }
+                }
+              }
+            } //end list-user-suggested 
+          } //end suggestions-box
+        }
         footer {
           position: absolute;
           bottom: 5px;
           color: $footerFontColor;
+          height: 80px;
+          width: 100%;
           .footer-links {
             .link-ul {
               list-style: none;

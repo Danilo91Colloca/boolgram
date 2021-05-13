@@ -1,0 +1,53 @@
+@import "../my-scss/_color-palette";
+.stories-box {
+  width: 100%;
+  height: 180px;
+  background: #fff; 
+  border: 1px solid lightgray;
+  margin: 15px 0px;
+  overflow-x: auto;
+  align-items: center;
+  display: flex;
+  padding: 0px 15px;
+  .slider {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    .story-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 10px;
+      .container-imgUser-story {
+        width: 60px;
+        height: 60px;
+        border-top: 2px solid $bordColorOne;
+        border-right: 2px solid $bordColorOne;
+        border-left:  2px solid $bordColorTwo;
+        border-bottom:  2px solid $bordColorTwo;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        padding: 2px;  
+        margin-bottom: 5px;        
+        img {
+          width: 100%;
+          border-radius: 50%;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .user-name-story {
+        width: 60px;
+        text-align: center;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+    } //end story container
+  } //end slider
+  
+
+} //end stories-box
