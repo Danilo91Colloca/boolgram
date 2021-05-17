@@ -3,7 +3,7 @@
     <main class="wrapper-center">
       <!-- LEFT SECTION -->
       <div class="main-left">
-        <Slides/>
+       <slide-story/>
         <!-- posts box -->
         <div class="posts-box">
           <Post/>
@@ -25,6 +25,10 @@
               </div> 
               <a href="#" class="change-account">Passa a</a>  
             </div>
+            <div class="link-to-seggested">
+              <p>Suggerimenti per te</p>
+              <a href=""> Mostra tutti</a>
+            </div>
             <!-- suggestions box-->
             <div class="suggestions-box">
               <ul class="list-users-suggested">
@@ -45,8 +49,10 @@
           <!-- FOOTER -->
           <footer>
             <div class="footer-links">
-              <ul class="link-ul">
-                <li class="link-li">About</li>
+              <ul class="link-ul" >
+                <li class="link-li dot" v-for="item in footerServices" v-bind:key="item.id">
+                  {{item}}
+                </li>
               </ul>
             </div>
             <div class="copyright">
@@ -62,20 +68,21 @@
 <script>
 // @ is an alias to /src
 import Post from "@/components/Post.vue";
-import Slides from "@/components/Slides.vue";
 import { mapState } from 'vuex';
+import SlideStory from '../components/SlideStory.vue';
 export default {
   name: "App",
   components: {
     Post,
-    Slides
+    SlideStory
   },
   mounted () {
         this.$store.dispatch('getUsers')
     },
   computed: 
     mapState([
-      'usersArr'
+      'usersArr',
+      'footerServices'
   ]),
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="post">
-    <div class="post-collection-comntainer" v-for="post in postsArr" :key="post.id">
+  <div class="post" >
+    <div class="post-collection-comntainer" v-for="post in postsArr" :key="post.id" onload="getLikesNum()">
       <div class="post-author-box">
         <div class="post-userData">
           <div class="post-userImage">
@@ -30,7 +30,7 @@
           </div>
           <div class="all-likes">
             Piace a 
-            <strong>User_Name</strong>
+            <strong>name</strong>
             e 
             <a href="#">
               <strong>n altri</strong>
@@ -67,14 +67,25 @@ export default {
   props: {
   },
   mounted () {
-        this.$store.dispatch('getUsers');
-        this.$store.dispatch('getPosts')
+    this.$store.dispatch('getUsers');
+    this.$store.dispatch('getPosts');
     },
   computed: 
     mapState([
       'usersArr',
       'postsArr'
   ]),
+  methods: {
+    //TODO creare una funzione che prende solo il numero dei like
+    getLikesNum() {
+      this.postsArr.filter((item)=>{
+        let likesNum=item.likes;
+        console.log('suka')
+        console.log(likesNum.length)
+        // return likesNum.length;
+      })
+    }
+  }
 };
 </script>
 

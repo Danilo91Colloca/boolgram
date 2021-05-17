@@ -9,7 +9,20 @@ Vue.use(VueAxios, axios);
 export default new Vuex.Store({
   state: {
     usersArr: [],
-    postsArr: []
+    postsArr: [],
+    footerServices:[
+      'Informazioni',
+      'Assistenza',
+      'Stampa',
+      'API',
+      'Lavora con noi',
+      'Privacy',
+      'Condizioni',
+      'luoghi',
+      'Account più popolari',
+      'Hashtag',
+      'Lingua'
+    ]
   },
   getters: {
     usersArr: state=> {
@@ -41,7 +54,7 @@ export default new Vuex.Store({
         .get('https://flynn.boolean.careers/exercises/api/boolgram/posts')
         .then((response)=>{
           let objectsfromApi=response.data;
-          console.log(response.data);
+          // console.log(response.data);
           commit('SET_postsArr', objectsfromApi);
         });
     }
