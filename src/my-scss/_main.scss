@@ -15,7 +15,6 @@
       width: 65%;
       height: 100%;
       padding: 5px;
-      
       .posts-box {
         height: 100%;
         width: 100%;
@@ -55,7 +54,6 @@
               &:hover {
                 cursor: pointer;
               }
-            
             }
             .user-name-box {
               .user-name {
@@ -74,6 +72,13 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
+            p {
+              color: $graySuggested;
+            }
+            a {
+              color: $generalFontColor;
+              text-decoration: none;
+            }
           }
           .suggestions-box {
             .list-users-suggested {

@@ -1,122 +1,134 @@
 @import "_color-palette";
 .post {
-  height: 800px;
-  border: 1px solid $borderBoxColor;
-  background-color: #fff;
-  .post-author-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    .post-userData {
+  
+  .post-collection-comntainer {
+    height: 800px;
+    border: 1px solid $borderBoxColor;
+    background-color: #fff;
+    margin-bottom: 20px;
+    .post-author-box {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      .post-userImage {
-        width: 50px;
-        height: 50px;
-        border-top: 2px solid $bordColorOne;
-        border-right: 2px solid $bordColorOne;
-        border-left:  2px solid $bordColorTwo;
-        border-bottom:  2px solid $bordColorTwo;
-        border-radius: 50%;
+      padding: 5px;
+      .post-userData {
         display: flex;
         justify-content: center;
-        padding: 2px;  
-        margin-right: 5px; 
-        img {
-          width:100%;
+        align-items: center;
+        .post-userImage {
+          width: 50px;
+          height: 50px;
+          border-top: 2px solid $bordColorOne;
+          border-right: 2px solid $bordColorOne;
+          border-left:  2px solid $bordColorTwo;
+          border-bottom:  2px solid $bordColorTwo;
           border-radius: 50%;
-          border: 2px solid lightgray;
+          display: flex;
+          justify-content: center;
+          padding: 2px;  
+          margin-right: 5px; 
+          img {
+            width:100%;
+            border-radius: 50%;
+            border: 2px solid lightgray;
+          }
         }
       }
-    }
-  } //end post-author-box
-
-  .post-img-box {
-      // background-color: green; //TEMP
-      width: 100%;
-      height: 500px;
-      img {
-        height: 100%;
+    } //end post-author-box
+  
+    .post-img-box {
+        // background-color: green; //TEMP
         width: 100%;
-      }
-  } //end post-img-box
-  .like-message-box {
-    padding: 10px;
-    .icon-like-msg {
-      font-size: 25px;
-      margin-bottom: 15px;
-      i {
-        margin-right: 20px;
-      }
-    }
-    .like-users {
-      display: flex;
-      align-items: center;
-      .img-user-like {
-        width: 50px;
-        height: 50px;
-        border-top: 2px solid $bordColorOne;
-        border-right: 2px solid $bordColorOne;
-        border-left:  2px solid $bordColorTwo;
-        border-bottom:  2px solid $bordColorTwo;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        padding: 2px;  
-        margin-right: 5px; 
+        height: 500px;
         img {
-          width:100%;
+          height: 100%;
+          width: 100%;
+        }
+    } //end post-img-box
+    .like-message-box {
+      padding: 10px;
+      .icon-like-msg {
+        font-size: 25px;
+        margin-bottom: 15px;
+        i {
+          margin-right: 20px;
+        }
+      }
+      .like-users {
+        display: flex;
+        align-items: center;
+        .img-user-like {
+          width: 50px;
+          height: 50px;
+          border-top: 2px solid $bordColorOne;
+          border-right: 2px solid $bordColorOne;
+          border-left:  2px solid $bordColorTwo;
+          border-bottom:  2px solid $bordColorTwo;
           border-radius: 50%;
-          border: 2px solid lightgray;
+          display: flex;
+          justify-content: center;
+          padding: 2px;  
+          margin-right: 5px; 
+          img {
+            width:100%;
+            border-radius: 50%;
+            border: 2px solid lightgray;
+          }
+        }
+        .all-likes {
+          a {
+            color: black;
+            text-decoration: none;
+          }
         }
       }
-      .all-likes {
-        a {
-          color: black;
-          text-decoration: none;
+    } //like-message-box
+    .comments-box {
+      padding: 15px;
+      margin-bottom: 10px;
+      .last-comment {
+        margin-bottom: 15px; 
+      }
+      a.all-comments {
+        color: gray;
+        text-decoration: none;
+      }
+    } //comments-box
+    .write-comment-box {
+      bottom: 0;
+      padding-right: 15px;
+      .form-comment {
+        display: flex;
+        align-items: center;
+        textarea {
+          width: 90%;
+          height: 30px;
+          font-size: 14px;
+          border: none;
+          padding: 0 15px;
+          outline: none;
+          resize: none;
+        }
+        button {
+          width: 10%;
+          background-color: transparent;
+          border: none;
+          color: $postFollowSwitchColor;
+          font-weight: 800;
+          &:hover {
+            cursor: pointer;
+          }
+          &:disabled {
+            color: $disabledButton;
+            cursor: default;
+          }
+          &.disable-button{
+            pointer-events: none;
+            opacity: 0.5;
+          }
         }
       }
-    }
-  } //like-message-box
-  .comments-box {
-    padding: 15px;
-    margin-bottom: 10px;
-    .last-comment {
-      margin-bottom: 15px; 
-    }
-    a.all-comments {
-      color: gray;
-      text-decoration: none;
-    }
-  } //comments-box
-  .write-comment-box {
-    display: flex;
-    bottom: 0;
-    padding-right: 15px;
-    textarea {
-      width: 90%;
-      height: 30px;
-      font-size: 14px;
-      border: none;
-      padding: 0 15px;
-      outline: none;
-      resize: none;
-    }
-    button {
-      width: 10%;
-      background-color: transparent;
-      border: none;
-      color: $postFollowSwitchColor;
-      font-weight: 800;
-      &:hover {
-        cursor: pointer;
-      }
-      &:disabled {
-        color: $disabledButton;
-        cursor: default;
-      }
+    
     }
   }
 }

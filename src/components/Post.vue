@@ -35,9 +35,9 @@
             <a href="#">
               <strong>n altri</strong>
             </a>
-          </div>
         </div>
       </div>
+          </div>
       <!-- read comments box-->
       <div class="comments-box">
           <div class="last-comment">
@@ -52,9 +52,12 @@
       </div>
       <!-- write a comment box-->
       <div class="write-comment-box">
-        <textarea type="text" placeholder="Aggiungi un commento">
-        </textarea>  
-        <button type="submit" disabled> Pubblica</button>
+        <form class="form-comment" action="">
+          <textarea type="text" placeholder="Aggiungi un commento" maxlength="1000" v-model="commentIsWrite" v-on:keyup="removeDisabled()">
+          </textarea>  
+          <button type="submit" class="disable-button" v-if="commentIsWrite.length < 1"> Pubblica</button>
+          <button type="submit" v-else> Pubblica</button>
+        </form>
       </div>
     </div>
   </div>
@@ -70,23 +73,23 @@ export default {
     this.$store.dispatch('getUsers');
     this.$store.dispatch('getPosts');
     },
-  computed: 
-    mapState([
+  computed:{
+    ...mapState([
       'usersArr',
-      'postsArr'
-  ]),
-  methods: {
-    //TODO creare una funzione che prende solo il numero dei like
-    getLikesNum() {
-      this.postsArr.filter((item)=>{
-        let likesNum=item.likes;
-        console.log('suka')
-        console.log(likesNum.length)
-        // return likesNum.length;
-      })
+      'postsArr',
+      'commentIsWrite'
+    ]),
+    commentIsWrite: {
+      get () {
+        return this.$store.state.commentIsWrite
+      },
+      set (value) {
+        this.$store.commit('upDatecommentIsWrite', value)
+      },
     }
   }
-};
+}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

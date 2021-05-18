@@ -22,7 +22,9 @@ export default new Vuex.Store({
       'Account più popolari',
       'Hashtag',
       'Lingua'
-    ]
+    ],
+
+    commentIsWrite: ''
   },
   getters: {
     usersArr: state=> {
@@ -30,7 +32,14 @@ export default new Vuex.Store({
     },
     postsArr: state=> {
       return state.postsArr;
-    }
+    },
+    commentIsWrite: state=>{
+      return state.commentIsWrite;
+    },
+    disable: state=>{
+      return state.disable;
+    },
+
   },
   mutations: {
     SET_usersArr(state, objectfromApi) {
@@ -38,6 +47,9 @@ export default new Vuex.Store({
     },
     SET_postsArr(state, objectsfromApi) {
       state.postsArr = objectsfromApi;
+    },
+    upDatecommentIsWrite(state, commentIsWrite){
+      state.commentIsWrite = commentIsWrite;
     }
   },
   actions: {
