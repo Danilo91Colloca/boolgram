@@ -5,7 +5,6 @@
         <div class="nav-logo">
           <img src="./assets/logo.png" alt="" />
         </div>
-
         <div class="nav-search">
           <input id="serach" type="text" placeholder="Cerca" />
         </div>
@@ -24,14 +23,15 @@
 
 <style lang="scss">
 @import "./my-scss/color-palette";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
   body {
      background-color: $mainBgColor;
-  
   }
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
   }
   #app {
     min-width: 350px;

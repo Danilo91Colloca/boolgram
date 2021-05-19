@@ -65,6 +65,11 @@
         </form>
       </div>
     </div>
+    <div class="modal-all-comments-bg">
+      <div class="all-comments-modal-box">
+
+      </div>
+    </div>
   </div>
 </template>
 
@@ -72,8 +77,6 @@
 import { mapState } from 'vuex';
 export default {
   name: "Post",
-  props: {
-  },
   mounted () {
     this.$store.dispatch('getUsers');
     this.$store.dispatch('getPosts');
