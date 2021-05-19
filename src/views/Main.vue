@@ -20,8 +20,8 @@
                 <img src="../assets/profile.jpg" alt="">
               </div>
               <div class="user-name-box">
-              <p class="user-name">piu_94</p>
-              <p class="real-name">Paperion Pippo</p> 
+                <p class="user-name">piu_94</p>
+                <p class="real-name">Paperion Pippo</p> 
               </div> 
               <a href="#" class="change-account">Passa a</a>  
             </div>

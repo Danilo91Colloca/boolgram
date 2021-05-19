@@ -1,14 +1,14 @@
 <template>
   <div class="post" >
-    <div class="post-collection-comntainer" v-for="post in postsArr" :key="post.id" onload="getLikesNum()">
+    <div class="post-collection-comntainer" v-for="(post, index) in postsArr" :key="index.id">
       <div class="post-author-box">
         <div class="post-userData">
           <div class="post-userImage">
             <img :src="post.profile_picture" alt="">
           </div>
-          <div>
+          <div class="post-authorName">
             <h5>{{post.profile_name}}</h5>
-            <span>{{post.profile_fullname}}</span>
+            <span class="post-full-name">{{post.profile_fullname}}</span>
           </div>
         </div>
         <div class="menu-post">
@@ -21,33 +21,38 @@
       <!-- like and msg box-->
       <div class="like-message-box">
         <div class="icon-like-msg">
-          <i class="far fa-heart"></i>
+          <i id="heart-like" class="far fa-heart heart"></i>
           <i class="far fa-comment"></i>
         </div>
         <div class="like-users">
           <div class="img-user-like">
-            <img src="" alt="">
+            <img :src="post.likes[0].profile_picture"  alt="">
           </div>
           <div class="all-likes">
             Piace a 
-            <strong>name</strong>
+            <strong>{{post.likes[0].username}}</strong>
             e 
             <a href="#">
-              <strong>n altri</strong>
+              <strong>{{counter(post.likes)}} altri</strong>
             </a>
+          </div>
         </div>
       </div>
-          </div>
+      <!-- posts text -->
+      <div class="post-text-box">
+         <h4>{{post.profile_name}}</h4>
+         <p>{{post.post_text}}</p>
+      </div>
       <!-- read comments box-->
       <div class="comments-box">
           <div class="last-comment">
             <p>
-              <strong>heaters_5483 </strong>
-              this is an heaters comment
+              <strong>{{post.comments[0].username}}</strong>
+              {{post.comments[0].text}}
             </p>
           </div>
           <a class="all-comments" href="#" >
-            Visualizza tutti e n commenti
+            Visualizza tutti e {{counter(post.comments)}} commenti
           </a>
       </div>
       <!-- write a comment box-->
@@ -86,6 +91,11 @@ export default {
       set (value) {
         this.$store.commit('upDatecommentIsWrite', value)
       },
+    }
+  },
+  methods: {
+    counter(toCount){
+      return toCount.length;
     }
   }
 }

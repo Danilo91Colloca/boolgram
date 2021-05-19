@@ -36,9 +36,6 @@ export default new Vuex.Store({
     commentIsWrite: state=>{
       return state.commentIsWrite;
     },
-    disable: state=>{
-      return state.disable;
-    },
 
   },
   mutations: {
@@ -69,7 +66,8 @@ export default new Vuex.Store({
           // console.log(response.data);
           commit('SET_postsArr', objectsfromApi);
         });
-    }
+    },
+
   },
   modules: {},
 });

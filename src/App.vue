@@ -10,7 +10,7 @@
           <input id="serach" type="text" placeholder="Cerca" />
         </div>
         <div class="nav-likeHomeUser">
-          <i class="far fa-heart icon"></i>
+          <i class="far fa-heart icon heart"></i>
           <i class="fas fa-home icon"></i>
           <div class="img-profile">
              <img src="./assets/profile.jpg" alt="">
@@ -26,6 +26,7 @@
 @import "./my-scss/color-palette";
   body {
      background-color: $mainBgColor;
+  
   }
   * {
     margin: 0;
