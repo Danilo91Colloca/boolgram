@@ -29,10 +29,11 @@ export default {
   mounted () {
         this.$store.dispatch('getUsers')
     },
-  computed: 
-    mapState([
-      'usersArr'
-  ]),
+  computed: { 
+    ...mapState([
+        'usersArr'
+    ])
+  },
   methods: {
     // slidesFunc() {
     //   let arrUser= this.usersArr;

@@ -108,10 +108,13 @@
       .last-comment {
         margin-bottom: 15px; 
       }
-      a.all-comments {
+      p.all-num-comments {
         color: gray;
         text-decoration: none;
         font-size: 15px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     } //comments-box
     .write-comment-box {
@@ -150,21 +153,125 @@
       }
     
     }
-  }
-  .modal-all-comments-bg {
-    position: fixed;
-    z-index: 1000;
-    background-color: #00000086;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    max-width: 100%;
-    height: 100vh;
-    .all-comments-modal-box {
-      width: 400px;
-      height: 100%;
-      min-height: 500px;
-      background-color: #ffffff;
-    }
-  }
+    .modal-all-comments-bg {
+      position: fixed;
+      z-index: 1000;
+      background-color: #00000021;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      max-width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .close-cross-container {
+        position: absolute;
+        color: #ffffff;
+        font-size: 35px;
+        right: 15px;
+        top: 0;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .all-comments-modal-box {
+        display: flex;
+        width: 1000px;
+        height: 600px;
+        .img-post-container {
+          width: 60%;
+          height: 100%;
+          img {
+           width: 100%;
+           height: 100%; 
+          }
+        }
+       
+        .comments-side {
+          width: 40%;
+          height: 100%;
+          background-color: #ffffff;
+          .author-post-section-inPost {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid $borderBoxColor;
+            height: 80px;
+            padding-left: 15px;
+            .author-post-img-inPost {
+              width: 50px;
+              height: 50px;
+              border-top: 2px solid $bordColorOne;
+              border-right: 2px solid $bordColorOne;
+              border-left:  2px solid $bordColorTwo;
+              border-bottom:  2px solid $bordColorTwo;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              padding: 2px;  
+              margin-right: 15px;
+              img {
+                width:100%;
+                border-radius: 50%;
+                border: 2px solid lightgray;
+              }
+            }
+          }
+          .post-box-text-comments {
+            overflow-y: auto;
+            height: calc(90% - 160px);
+            padding-top: 15px;
+            .post-text-container {
+              border-bottom: 1px solid $borderBoxColor;
+              padding-left: 15px;
+              display: flex;
+              align-items: center;
+              padding-bottom: 15px;
+              .author-post-img-inPost {
+                width: 40px;
+                height: 40px;
+                border-top: 2px solid $bordColorOne;
+                border-right: 2px solid $bordColorOne;
+                border-left:  2px solid $bordColorTwo;
+                border-bottom:  2px solid $bordColorTwo;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                padding: 2px;  
+                margin-right: 15px;
+                img {
+                  width:100%;
+                  border-radius: 50%;
+                  border: 2px solid lightgray;
+                }
+               
+              }
+              .author-name {
+                margin-right: 10px;
+                font-size: 15px
+              }
+              .post-text {
+                font-size: 13px;
+              }
+            } //post-text-container
+            .comments-ul {
+              padding: 15px 0px 0px 15px;
+              .comments-li {
+                list-style: none;
+                .userName-comment {
+                  display: inline-block;
+                  margin: 0px 8px 10px 0;
+                  font-size: 15px;
+                }
+                .comment-text{
+                  display: inline-block;
+                  font-size: 13px;
+                }
+              }
+            }
+         }
+        }
+      } //all-comments-modal-box 
+    } //modal-all-comments-bg
+  }// end post-collection-comntainer
 }

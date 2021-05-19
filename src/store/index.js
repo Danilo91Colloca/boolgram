@@ -24,7 +24,9 @@ export default new Vuex.Store({
       'Lingua'
     ],
 
-    commentIsWrite: ''
+    commentIsWrite: '',
+    allCommentsToggle: false,
+    commentIndex: ''
   },
   getters: {
     usersArr: state=> {
@@ -36,6 +38,12 @@ export default new Vuex.Store({
     commentIsWrite: state=>{
       return state.commentIsWrite;
     },
+    allCommentsToggle: state=> {
+      return state.allCommentsToggle;
+    },
+    commentIndex: state=> {
+      return state.commentIndex;
+    }
 
   },
   mutations: {
@@ -47,6 +55,12 @@ export default new Vuex.Store({
     },
     upDatecommentIsWrite(state, commentIsWrite){
       state.commentIsWrite = commentIsWrite;
+    },
+    SET_allCommentsToggle(state, allCommentsToggle){
+      state.allCommentsToggle = allCommentsToggle;
+    },
+    SET_commentIndex(state, commentIndex) {
+      state.commentIndex = commentIndex;
     }
   },
   actions: {

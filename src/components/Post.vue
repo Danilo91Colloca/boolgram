@@ -51,9 +51,9 @@
               {{post.comments[0].text}}
             </p>
           </div>
-          <a class="all-comments" href="#" >
+          <p class="all-num-comments" v-on:click="commentsVisibility(), getCommentIndex(index)">
             Visualizza tutti e {{counter(post.comments)}} commenti
-          </a>
+          </p>
       </div>
       <!-- write a comment box-->
       <div class="write-comment-box">
@@ -64,10 +64,53 @@
           <button type="submit" v-else> Pubblica</button>
         </form>
       </div>
-    </div>
-    <div class="modal-all-comments-bg">
-      <div class="all-comments-modal-box">
 
+      <!-- modale dei commenti -->
+      <div class="modal-all-comments-bg" v-if="allCommentsToggle === true" v-on:click="commentsVisibility()">
+        <!-- close comments modal -->
+        <div class="close-cross-container">
+          <i class="fas fa-times" v-on:click="commentsVisibility()"></i>
+        </div>
+        <!-- /close comments modal -->
+        <!-- comments -->
+        <div class="all-comments-modal-box">
+          <div class="img-post-container">
+            <img :src="postsArr[commentIndex].post_image" alt="">
+          </div>
+          <div class="comments-side">
+            <!-- author img and name -->
+            <div class="author-post-section-inPost">
+              <div class="author-post-img-inPost">
+                <img :src="postsArr[commentIndex].profile_picture" alt="">
+              </div>
+              <h4>{{postsArr[commentIndex].profile_name}}</h4>
+            </div>
+            <div class="post-box-text-comments">
+              <div class="post-text-container">
+                <div class="author-post-img-inPost">
+                  <img :src="postsArr[commentIndex].profile_picture" alt="">
+                </div>
+                <h4 class="author-name">
+                  {{postsArr[commentIndex].profile_name}}
+                </h4>
+                <p class="post-text">
+                  {{postsArr[commentIndex].post_text}}
+                </p>
+              </div>
+              <!-- /author img and name -->
+              <ul class="comments-ul">
+                <li class="comments-li" v-for="comment in postsArr[commentIndex].comments" :key="comment.id">
+                  <h4 class="userName-comment">
+                    {{comment.username}}
+                  </h4>
+                  <p class="comment-text">
+                    {{comment.text}}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -78,6 +121,7 @@ import { mapState } from 'vuex';
 export default {
   name: "Post",
   mounted () {
+    // il dispatch serve per invocare un'azione (funzione) asincrona
     this.$store.dispatch('getUsers');
     this.$store.dispatch('getPosts');
     },
@@ -85,7 +129,9 @@ export default {
     ...mapState([
       'usersArr',
       'postsArr',
-      'commentIsWrite'
+      'commentIsWrite',
+      'allCommentsToggle',
+      'commentIndex'
     ]),
     commentIsWrite: {
       get () {
@@ -94,11 +140,38 @@ export default {
       set (value) {
         this.$store.commit('upDatecommentIsWrite', value)
       },
+    },
+    allCommentsToggle: {
+      get() {
+        return this.$store.state.allCommentsToggle
+      },
+      set(value) {
+        this.$store.commit('SET_allCommentsToggle', value)
+      }
+    },
+    commentIndex: {
+      get() {
+        return this.$store.state.commentIndex
+      },
+      set(value) {
+        this.$store.commit('SET_commentIndex', value)
+      }
     }
   },
   methods: {
     counter(toCount){
       return toCount.length;
+    },
+    commentsVisibility(){
+      if(this.allCommentsToggle === false) {
+        this.allCommentsToggle = true;
+      } else {
+        this.allCommentsToggle = false;
+      }
+    },
+    getCommentIndex(idx) {
+      this.commentIndex = idx;
+      console.log(idx)
     }
   }
 }
