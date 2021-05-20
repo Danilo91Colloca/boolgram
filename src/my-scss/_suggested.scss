@@ -1,0 +1,25 @@
+@import "_color-palette";
+.suggested{
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  .suggested-main {
+    padding-top: 60px;
+    .title-page {
+      width: 100%;
+      height: 90px;
+      position: relative;
+      .title {
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+      }
+    }
+    .contacts-suggested-container {
+      width: 600px;
+      background-color: #ffffff;
+    }
+  }
+}

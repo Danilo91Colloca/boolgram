@@ -26,7 +26,8 @@ export default new Vuex.Store({
 
     commentIsWrite: '',
     allCommentsToggle: false,
-    commentIndex: ''
+    commentIndex: '',
+
   },
   getters: {
     usersArr: state=> {
@@ -43,7 +44,8 @@ export default new Vuex.Store({
     },
     commentIndex: state=> {
       return state.commentIndex;
-    }
+    },
+   
 
   },
   mutations: {
@@ -56,12 +58,13 @@ export default new Vuex.Store({
     upDatecommentIsWrite(state, commentIsWrite){
       state.commentIsWrite = commentIsWrite;
     },
-    SET_allCommentsToggle(state, allCommentsToggle){
+    CHANGE_allCommentsToggle(state, allCommentsToggle){
       state.allCommentsToggle = allCommentsToggle;
     },
     SET_commentIndex(state, commentIndex) {
       state.commentIndex = commentIndex;
     }
+
   },
   actions: {
     getUsers ({ commit }) {

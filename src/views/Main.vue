@@ -26,13 +26,14 @@
               <a href="#" class="change-account">Passa a</a>  
             </div>
             <div class="link-to-seggested">
-              <p>Suggerimenti per te</p>
-              <a href=""> Mostra tutti</a>
+              <p class="suggested-text">Suggerimenti per te</p>
+              <a class="view-all" href="/suggested"> Mostra tutti</a>
             </div>
             <!-- suggestions box-->
             <div class="suggestions-box">
               <ul class="list-users-suggested">
-                <li class="user-suggested-li" v-for="user in usersArr" v-bind:key="user.id">
+                <li class="user-suggested-li" v-for="user in usersArr" 
+                v-bind:key="user.id">
                     <div class="suggested-user">
                       <div class="container-imgUser-story">
                         <img :src="user.profile_picture" alt="">
@@ -69,9 +70,9 @@
 // @ is an alias to /src
 import Post from "@/components/Post.vue";
 import { mapState } from 'vuex';
-import SlideStory from '../components/SlideStory.vue';
+import SlideStory from '@/components/SlideStory.vue';
 export default {
-  name: "App",
+  name: "Main",
   components: {
     Post,
     SlideStory
@@ -79,11 +80,14 @@ export default {
   mounted () {
         this.$store.dispatch('getUsers')
     },
-  computed: 
-    mapState([
-      'usersArr',
-      'footerServices'
-  ]),
+  computed: { 
+      ...mapState([
+        'usersArr',
+        'footerServices',
+
+    ]),
+    
+  } 
 };
 </script>
 

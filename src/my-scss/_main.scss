@@ -76,12 +76,15 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
-            p {
+            .suggested-text {
               color: $graySuggested;
             }
-            a {
+            .view-all {
               color: $generalFontColor;
               text-decoration: none;
+              &:hover {
+                cursor: pointer;
+              }
             }
           }
           .suggestions-box {

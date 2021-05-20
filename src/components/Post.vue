@@ -146,7 +146,7 @@ export default {
         return this.$store.state.allCommentsToggle
       },
       set(value) {
-        this.$store.commit('SET_allCommentsToggle', value)
+        this.$store.commit('CHANGE_allCommentsToggle', value)
       }
     },
     commentIndex: {

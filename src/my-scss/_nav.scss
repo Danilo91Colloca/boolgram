@@ -19,12 +19,13 @@
         display: flex;
         justify-items: center;
         align-items: center;
-        img {
-          width: 120px;
+        .logo {
+          text-decoration: none;
+          img {
+            width: 120px;
+          }
         }
-        &:hover {
-          cursor: pointer;
-        }
+        
       }
       .nav-search {
         height: 100%;
@@ -49,7 +50,6 @@
         align-items: center;
         .icon {
           font-size: 18px;
-          margin-left: 25px;
           &:hover {
             cursor: pointer;
           }
@@ -58,6 +58,11 @@
             font-weight: 900;
             color:#000000;
           }
+        }
+        .home-icon {
+          font-size: 18px;
+          margin-left: 25px;
+          color: $generalFontColor;
         }
         .img-profile {
           width: 38px;
