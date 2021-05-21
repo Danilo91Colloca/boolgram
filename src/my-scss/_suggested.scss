@@ -20,6 +20,51 @@
     .contacts-suggested-container {
       width: 600px;
       background-color: #ffffff;
+      padding: 15px;
+      .ul-list-users-suggested {
+        .user-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 0;
+          .pic-name {
+            display: flex;
+            align-items: center;
+            .user-img {
+              width: 60px;
+              height: 60px;
+              border-top: 2px solid $bordColorOne;
+              border-right: 2px solid $bordColorOne;
+              border-left:  2px solid $bordColorTwo;
+              border-bottom:  2px solid $bordColorTwo;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              padding: 2px;  
+              margin: 0px 15px 5px 5px;    
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+          .follow-button {
+            background-color: $postFollowSwitchColor;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 5px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 }

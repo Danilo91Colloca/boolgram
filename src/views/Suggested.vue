@@ -7,12 +7,32 @@
         </div>
       </div>
       <div class="contacts-suggested-container">
-        <ul>
-          <li v-for="user in usersArr" :key="user.id">
-            {{user.profile_name}}
+        <ul class="ul-list-users-suggested">
+          <li v-for="user in usersArr" :key="user.id" class="user-item">
+            <div class="pic-name">
+              <div class="user-img">
+                <img :src="user.profile_picture" alt="">
+              </div>
+              <p class="user-name">
+                {{user.profile_name}}
+              </p>
+            </div>
+            <button class="follow-button">
+              Segui
+            </button>
           </li>
-          <li v-for="userB in postsArr" :key="userB.id">
-            {{userB.profile_name}}
+          <li v-for="userB in postsArr" :key="userB.id" class="user-item">
+            <div class="pic-name">
+              <div class="user-img">
+                <img :src="userB.profile_picture" alt="">
+              </div>
+              <p class="user-name">
+                {{userB.profile_name}}
+              </p>
+            </div>
+            <button class="follow-button">
+              Segui
+            </button>
           </li>
         </ul>
       </div>
