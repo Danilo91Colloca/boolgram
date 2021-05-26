@@ -1,0 +1,260 @@
+@import "_color-palette";
+.skeleton {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 100%;
+  main.wrapper-center {
+    position: relative;
+    width: 1000px;
+    height: calc(100vh - 80px); //TEMP
+    margin: 0 auto;
+    display: flex;
+    .main-left {
+      width: 65%;
+      height: 100%;
+      padding: 5px;
+      .stories-box {
+        width: 100%;
+        height: 180px;
+        background: #fff; 
+        border: 1px solid lightgray;
+        margin: 15px 0px;
+        overflow-x: auto;
+        align-items: center;
+        display: flex;
+        padding: 0px 15px;
+        .slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+          .story-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 10px;
+            .container-imgUser-story {
+              width: 60px;
+              height: 60px;
+              background-color: $mainBgColor;
+              border: 2px solid $borderBoxColor;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              padding: 2px;  
+              margin-bottom: 5px;        
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          } //end story container
+        } //end slider
+      } //end stories-box
+      .posts-box {
+        height: 100%;
+        width: 100%;
+        .post {
+          .post-collection-comntainer {
+            height: 100%;
+            border: 1px solid $borderBoxColor;
+            background-color: #fff;
+            margin-bottom: 20px;
+            .post-author-box {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 5px;
+              .post-userData {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .post-userImage {
+                  width: 50px;
+                  height: 50px;
+                  background-color: $mainBgColor;
+                  border: 2px solid $borderBoxColor;
+                  border-radius: 50%;
+                  display: flex;
+                  justify-content: center;
+                  padding: 2px;  
+                  margin-right: 5px; 
+                }
+                .post-authorName {
+                  .name1 {
+                    width: 200px;
+                    height: 15px;
+                    background-color: $borderBoxColor;
+                    margin-bottom: 5px;
+                  }
+                  .post-full-name {
+                    width: 100px;
+                    height: 15px;
+                    background-color: $borderBoxColor;
+                    margin-bottom: 5px;
+                  }
+                }
+              }
+            } //end post-author-box
+            .post-img-box {
+              // background-color: green; //TEMP
+              width: 100%;
+              height: 600px;
+              background: linear-gradient(135deg, lightgray,
+              lightgray, lightgray, #ffffff,lightgray, lightgray,lightgray);
+              background-size: 400% 400%;
+              animation: gradient 5s ease infinite;
+              @keyframes gradient {
+                0% {
+                  background-position: 0% 50%;
+                }
+                50% {
+                  background-position: 100% 50%;
+                }
+                100% {
+                  background-position: 0% 50%;
+                }
+              }
+            } //end post-img-box
+          }// end post-collection-comntainer
+        }
+      }
+    } //end main-left
+    .main-right {
+      position: fixed;
+      width: 40%;
+      right: 0px;
+      height: 100%;
+      padding: 28px 5px 5px 5px;
+      .main-r-wrapper {
+        width: 300px;
+        height: 565px; 
+        padding: 45px 5px 5px 5px;
+        position: relative;
+        .user-r-section {
+          height: calc(100% - 80px);
+          width: 100%;
+          overflow: hidden;
+          position:relative;
+          .profile-info-userLogged {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            .img-profile-userLogged {
+              margin-right: 20px;
+              width: 60px;
+              height: 60px;
+              overflow: hidden;
+              border-radius: 50%;
+              img {
+                width: 100%;
+                border-radius: 50%;
+                border: 2px solid lightgray;
+              }
+            }
+            .user-name-box {
+              .user-name {
+                font-weight: bolder;
+              }
+              .real-name {
+                font-size: 12px;
+                color: $graySuggested;
+              }
+            }
+            a.change-account {
+              position: absolute;
+              right: 5px;
+              text-decoration: none;
+              color: $postFollowSwitchColor;
+              font-weight: bold;
+            }
+          } //end profile-info-userLogged
+          .link-to-seggested {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            .suggested-text {
+              color: $graySuggested;
+            }
+            .view-all {
+              color: $borderBoxColor;
+              text-decoration: none;
+            }
+          }
+          .suggestions-box {
+            .list-users-suggested {
+              list-style: none;
+              .user-suggested-li {
+                margin-bottom: 15px;
+                .suggested-user {
+                  display: flex;
+                  align-items: center;
+                  .container-imgUser-story {
+                    width: 58px;
+                    height: 46px;
+                    border-radius: 50%;
+                    margin-right: 10px;        
+                    background-color: $mainBgColor;
+                    border: 2px solid $borderBoxColor;
+                  }
+                  .userName-burtton-r-contianer {
+                    width: 100%;
+                    position: relative;
+                    
+                    .user-name-story1 {
+                      width: 200px;
+                      height: 15px;
+                      background-color: $borderBoxColor;
+                      margin-bottom: 5px;
+                    }
+                    .user-name-story2 {
+                      width: 100px;
+                      height: 15px;
+                      background-color: $borderBoxColor;
+                    }
+                  }
+                }
+              }
+            } //end list-user-suggested 
+          } //end suggestions-box
+        }
+        footer {
+          position: absolute;
+          bottom: 0px;
+          color: $footerFontColor;
+          height: 80px;
+          width: 100%;
+          padding-top: 20px;
+          .footer-links {
+            .link-ul {
+              list-style: none;
+              display: flex;
+              flex-wrap: wrap;
+              margin-bottom: 15px;
+              .link-li {
+                font-size: 12px;
+                margin-right: 5px;
+              }
+              .link-li.dot::after {
+                content: " . ";
+              }
+              //elimina il dot sull'ultimo della lista
+              .link-li.dot:last-child::after {
+                content: '';
+              }
+            }
+          }
+          .copyright {
+          font-size: 13px;
+          
+          }
+        }
+      } //end main-r-wrapper
+    } // end main right
+  } //end main.wrapper-center
+} //end main

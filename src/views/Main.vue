@@ -1,6 +1,9 @@
 <template>
   <div class="main">
-    <main class="wrapper-center">
+    <skeleton></skeleton>
+
+    <!-- V-IF NOT SHOW -REAL MAIN -->
+    <main class="wrapper-center"  v-if="INVISIBLE">
       <!-- LEFT SECTION -->
       <div class="main-left">
        <slide-story/>
@@ -9,7 +12,6 @@
           <Post/>
         </div>
       </div>
-
       <!-- RIGHT SECTION -->
       <div class="main-right">
         <div class="main-r-wrapper">
@@ -63,19 +65,22 @@
         </div>
       </div>
     </main>
+    
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Post from "@/components/Post.vue";
-import { mapState } from 'vuex';
-import SlideStory from '@/components/SlideStory.vue';
+import { mapState } from "vuex";
+import SlideStory from "@/components/SlideStory.vue";
+import Skeleton from "@/components/Skeleton.vue"
 export default {
   name: "Main",
   components: {
     Post,
-    SlideStory
+    SlideStory,
+    Skeleton
   },
   mounted () {
         this.$store.dispatch('getUsers')
