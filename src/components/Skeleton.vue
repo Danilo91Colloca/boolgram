@@ -5,6 +5,9 @@
       <div class="main-left">
         <div class="stories-box">
           <div class="slider">
+            <div class="spinner">
+              <img src="@/assets/spinner.gif" alt="">
+            </div>
             <div class="story-container"  v-for="userStory in usersArr" v-bind:key="userStory.id">
               <div class="container-imgUser-story">
                 <!-- BACKGROUND COLOR NO IMG-->
@@ -99,9 +102,7 @@
         </div>
       </div>
     </div>
-    <div class="spinner">
-      <img src="@/assets/spinner.gif" alt="">
-    </div>
+   
   </div>
 </template>
 

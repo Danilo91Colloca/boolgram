@@ -259,11 +259,10 @@
   } //end main.wrapper-center
   .spinner {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% -50%);
+    top: 25px;
     img {
       border-radius: 50%;
+      width: 50px;
     }
   }
 } //end main

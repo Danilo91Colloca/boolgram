@@ -106,7 +106,7 @@ export default {
         setTimeout(function(){
           self.visibility = "hidden";
           console.log('non visibile')
-        }, 3000)
+        }, 2000)
       }
     }
   }
