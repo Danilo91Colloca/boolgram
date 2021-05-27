@@ -1,9 +1,8 @@
 <template>
   <div class="main">
-    <skeleton></skeleton>
-
+    <skeleton :class="visibility" :onload="SET_skeletonVisibility()"></skeleton>
     <!-- V-IF NOT SHOW -REAL MAIN -->
-    <main class="wrapper-center"  v-if="INVISIBLE">
+    <main class="wrapper-center" v-if="visibility === 'hidden'">
       <!-- LEFT SECTION -->
       <div class="main-left">
        <slide-story/>
@@ -82,17 +81,35 @@ export default {
     SlideStory,
     Skeleton
   },
-  mounted () {
-        this.$store.dispatch('getUsers')
+  data() {
+    return {
+      visibility: ' ',
+    }
+  },
+   mounted() {
+        this.$store.dispatch('getUsers');
     },
   computed: { 
-      ...mapState([
-        'usersArr',
-        'footerServices',
+    ...mapState([
+      'usersArr',
+      'footerServices',
 
     ]),
-    
-  } 
+  },
+  methods: {
+    SET_skeletonVisibility(){
+      if(this.usersArr.length === 0) {
+        this.visibility = ' ';
+        console.log('visibile')
+      } else {
+        let self = this;
+        setTimeout(function(){
+          self.visibility = "hidden";
+          console.log('non visibile')
+        }, 3000)
+      }
+    }
+  }
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="skeleton">
-    <main class="wrapper-center">
+    <div class="wrapper-center">
       <!-- LEFT SECTION -->
       <div class="main-left">
         <div class="stories-box">
@@ -98,7 +98,10 @@
           </footer>
         </div>
       </div>
-    </main>
+    </div>
+    <div class="spinner">
+      <img src="@/assets/spinner.gif" alt="">
+    </div>
   </div>
 </template>
 
@@ -117,8 +120,8 @@ export default {
         "postsArr"
 
     ]),
-    
-  } 
+  },
+  
 };
 </script>
 

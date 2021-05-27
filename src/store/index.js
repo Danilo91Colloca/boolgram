@@ -83,8 +83,7 @@ export default new Vuex.Store({
           // console.log(response.data);
           commit('SET_postsArr', objectsfromApi);
         });
-    },
-
+    }
   },
   modules: {},
 });
