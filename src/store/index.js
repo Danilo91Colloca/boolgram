@@ -27,7 +27,7 @@ export default new Vuex.Store({
     commentIsWrite: '',
     allCommentsToggle: false,
     commentIndex: '',
-
+    allLikesToggle: false,
   },
   getters: {
     usersArr: state=> {
@@ -44,6 +44,9 @@ export default new Vuex.Store({
     },
     commentIndex: state=> {
       return state.commentIndex;
+    },
+    allLikesToggle: state=> {
+      return state.allLikessToggle;
     },
    
 
@@ -63,7 +66,10 @@ export default new Vuex.Store({
     },
     SET_commentIndex(state, commentIndex) {
       state.commentIndex = commentIndex;
-    }
+    },
+    CHANGE_allLikesToggle(state, allCommentsToggle){
+      state.allCommentsToggle = allCommentsToggle;
+    },
 
   },
   actions: {

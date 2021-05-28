@@ -64,15 +64,33 @@
           <button type="submit" v-else> Pubblica</button>
         </form>
       </div>
+      <!-- modale all likes -->
+      <div class="modal-container-all-likes-bg">
+        <div class="likes-users-box">
+          <div class="title-modal">
+            <div class="close-cross-container">
+              <i class="fas fa-times" v-on:click="commentsVisibility()"></i>
+            </div>
+            <p>
+              Mi piace
+            </p>
+          </div>
+
+        </div>
+      </div>
+
 
       <!-- modale dei commenti -->
-      <div class="modal-all-comments-bg" v-if="allCommentsToggle === true" v-on:click="commentsVisibility()">
+      <div class="modal-container-all-comments-bg" 
+        v-if="allCommentsToggle === true" 
+        v-on:click="commentsVisibility()"
+      >
         <!-- close comments modal -->
         <div class="close-cross-container">
           <i class="fas fa-times" v-on:click="commentsVisibility()"></i>
         </div>
         <!-- /close comments modal -->
-        <!-- comments -->
+        <!-- all comments modal-->
         <div class="all-comments-modal-box">
           <div class="img-post-container">
             <img :src="postsArr[commentIndex].post_image" alt="">
@@ -127,11 +145,12 @@ export default {
     },
   computed:{
     ...mapState([
-      'usersArr',
-      'postsArr',
-      'commentIsWrite',
-      'allCommentsToggle',
-      'commentIndex'
+      "usersArr",
+      "postsArr",
+      "commentIsWrite",
+      "allCommentsToggle",
+      "commentIndex",
+      "allLikesToggle",
     ]),
     commentIsWrite: {
       get () {
@@ -167,6 +186,13 @@ export default {
         this.allCommentsToggle = true;
       } else {
         this.allCommentsToggle = false;
+      }
+    },
+    likessVisibility(){
+      if(this.allLikesToggle === false) {
+        this.allLikesToggle = true;
+      } else {
+        this.allLikesToggle = false;
       }
     },
     getCommentIndex(idx) {
