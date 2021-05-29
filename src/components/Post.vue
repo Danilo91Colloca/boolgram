@@ -32,9 +32,9 @@
             Piace a 
             <strong>{{post.likes[0].username}}</strong>
             e 
-            <a href="#">
+            <p  v-on:click="likesVisibility()">
               <strong>{{counter(post.likes)}} altri</strong>
-            </a>
+            </p>
           </div>
         </div>
       </div>
@@ -65,7 +65,10 @@
         </form>
       </div>
       <!-- modale all likes -->
-      <div class="modal-container-all-likes-bg">
+      <div class="modal-container-all-likes-bg"
+        v-if="allLikesToggle === true" 
+        v-on:click="likesVisibility()"
+      >
         <div class="likes-users-box">
           <div class="title-modal">
             <div class="close-cross-container">
@@ -168,6 +171,14 @@ export default {
         this.$store.commit('CHANGE_allCommentsToggle', value)
       }
     },
+    allLikesToggle: {
+      get() {
+        return this.$store.state.allLikesToggle
+      },
+      set(value) {
+        this.$store.commit('CHANGE_allLikesToggle', value)
+      }
+    },
     commentIndex: {
       get() {
         return this.$store.state.commentIndex
@@ -188,7 +199,7 @@ export default {
         this.allCommentsToggle = false;
       }
     },
-    likessVisibility(){
+    likesVisibility(){
       if(this.allLikesToggle === false) {
         this.allLikesToggle = true;
       } else {

@@ -46,7 +46,7 @@ export default new Vuex.Store({
       return state.commentIndex;
     },
     allLikesToggle: state=> {
-      return state.allLikessToggle;
+      return state.allLikesToggle;
     },
    
 
@@ -67,8 +67,8 @@ export default new Vuex.Store({
     SET_commentIndex(state, commentIndex) {
       state.commentIndex = commentIndex;
     },
-    CHANGE_allLikesToggle(state, allCommentsToggle){
-      state.allCommentsToggle = allCommentsToggle;
+    CHANGE_allLikesToggle(state, allLikesToggle){
+      state.allLikesToggle = allLikesToggle;
     },
 
   },
