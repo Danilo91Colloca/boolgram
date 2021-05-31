@@ -32,8 +32,12 @@
             Piace a 
             <strong>{{post.likes[0].username}}</strong>
             e 
-            <p v-on:click="likesVisibility(), getCommentIndex(index)">
-              <strong>{{counter(post.likes)}} altri</strong>
+            <p 
+              class="hover-pointer-likes"
+              v-on:click="likesVisibility(), 
+              getCommentIndex(index)"     
+            >
+              {{counter(post.likes)}} altri
             </p>
           </div>
         </div>
@@ -72,26 +76,31 @@
         <div class="likes-users-box">
           <div class="title-modal">
             <div class="close-cross-container">
-              <i class="fas fa-times" v-on:click="commentsVisibility()"></i>
+              <i class="fas fa-times"></i>
             </div>
             <p>
               Mi piace
             </p>
           </div>
-          <div class="username-and-button" v-for="like in postsArr[commentIndex].likes" :key="like.id">
-            <div class="usernameLike">
+          <div class="username-and-button" 
+            v-for="like in postsArr[commentIndex].likes" 
+            :key="like.id"
+          >
+            
+            <div class="img-usernameLike">
+              <div class="img-container">
+                <img :src="like.profile_picture" alt="">
+              </div>
               {{like.username}}
             </div>
-            <div class="button-follow">
+            <div class="button-like">
               <button>
                 Segui
               </button>
             </div>
           </div>
-
         </div>
       </div>
-
 
       <!-- modale dei commenti -->
       <div class="modal-container-all-comments-bg" 
@@ -99,8 +108,8 @@
         v-on:click="commentsVisibility()"
       >
         <!-- close comments modal -->
-        <div class="close-cross-container">
-          <i class="fas fa-times" v-on:click="commentsVisibility()"></i>
+        <div class="close-cross-container" >
+          <i class="fas fa-times"></i>
         </div>
         <!-- /close comments modal -->
         <!-- all comments modal-->
