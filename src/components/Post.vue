@@ -32,7 +32,7 @@
             Piace a 
             <strong>{{post.likes[0].username}}</strong>
             e 
-            <p  v-on:click="likesVisibility()">
+            <p v-on:click="likesVisibility(), getCommentIndex(index)">
               <strong>{{counter(post.likes)}} altri</strong>
             </p>
           </div>
@@ -77,6 +77,16 @@
             <p>
               Mi piace
             </p>
+          </div>
+          <div class="username-and-button" v-for="like in postsArr[commentIndex].likes" :key="like.id">
+            <div class="usernameLike">
+              {{like.username}}
+            </div>
+            <div class="button-follow">
+              <button>
+                Segui
+              </button>
+            </div>
           </div>
 
         </div>
