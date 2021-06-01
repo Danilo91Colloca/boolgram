@@ -22,7 +22,11 @@
       <div class="like-message-box">
         <div class="icon-like-msg">
           <i id="heart-like" class="far fa-heart heart"></i>
-          <i class="far fa-comment"></i>
+          <i 
+            class="far fa-comment" 
+            v-on:click="commentsVisibility(), 
+            getCommentIndex(index)"
+          ></i>
         </div>
         <div class="like-users">
           <div class="img-user-like">
